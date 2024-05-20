@@ -11,6 +11,9 @@ public class Menu
 {
     Menu(Scanner scanner)
     {
+        this.menu = new ArrayList<Item>();
+        this.foodTypeFromInt = FoodType.values();
+
         File file = new File("src\\resources\\Menu.csv");
 
         try
@@ -25,6 +28,7 @@ public class Menu
         while(scanner.hasNextLine())
         {
             String[] item = scanner.nextLine().split(",");
+            
             menu.add(new Item(
                 item[2], 
                 foodTypeFromInt[Integer.parseInt(item[1])], 
@@ -37,9 +41,9 @@ public class Menu
 
     public void PrintMenu()
     {
-        menu.forEach(i->System.out.println(i.name));
+        menu.forEach(x->System.out.println(x.name));
     }
 
-    ArrayList<Item> menu = new ArrayList<Item>();
-    FoodType[] foodTypeFromInt = FoodType.values();
+    ArrayList<Item> menu = null;
+    FoodType[] foodTypeFromInt = null;
 }

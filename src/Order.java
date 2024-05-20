@@ -31,12 +31,12 @@ public class Order
         items.add(item);
     }
 
-    void RemoveItem(ArrayList<Item> items)
+    void DelItem(ArrayList<Item> items)
     {
         items.forEach(i->this.items.remove(i));
     }
 
-    void RemoveItem(Item[] items)
+    void DelItem(Item[] items)
     {
         for(int i = 0; i < items.length; i++)
         {
@@ -44,7 +44,7 @@ public class Order
         }
     }
 
-    void RemoveItem(Item item)
+    void DelItem(Item item)
     {
         items.remove(item);
     }
@@ -82,8 +82,8 @@ public class Order
     }
 
     int id = 0;
-    Customer customer = new Customer();
-    ArrayList<Item> items = new ArrayList<Item>();
+    Customer customer = null;
+    ArrayList<Item> items = null;
     private double total = 0.0;
     private String formattedTotal = "";
 }

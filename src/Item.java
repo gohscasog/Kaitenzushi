@@ -38,5 +38,5 @@ public class Item
     FoodType type = FoodType.Other;
     double price = 0.0;
     String description = "";
-    String[] ingredients = {};
+    String[] ingredients = null;
 }

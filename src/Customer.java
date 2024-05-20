@@ -4,11 +4,14 @@ import src.Item.FoodType;
 
 public class Customer
 {
-    Customer(){}
+    Customer(String name)
+    {
+        this.name = name;
+    }
 
     Customer(String name, String id, String phone)
     {
-        this.name = name;
+        this(name);
         this.id = id;
         this.phone = phone;
     }
@@ -19,8 +22,12 @@ public class Customer
         this.allergenics = allergenics;
     }
 
+    void AddOrder(){}
+    void DelOrder(){}
+
     String name = "";
     String id = "";
     String phone = "";
-    FoodType[] allergenics = {};
+    FoodType[] allergenics = null;
+    Order[] orders = null;
 }
