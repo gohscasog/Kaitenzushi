@@ -45,12 +45,18 @@ public class Tables
     void Checkin(int index, Customer customer)
     {
         tables.get(index).customer = customer;
+        tables.get(index).occupied = true;
     }
 
     void Checkout(int index, Customer customer)
     {
         tables.get(index).customer = null;
         tables.get(index).occupied = false;
+    }
+
+    Boolean IsOccupied(int index)
+    {
+        return tables.get(index).occupied;
     }
 
     @Override public String toString()
